@@ -9,8 +9,7 @@
 #import "ImageViewController.h"
 #import "URLViewController.h"
 
-@interface ImageViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
-//,UIPopoverPresentationControllerDelegate>
+@interface ImageViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -28,6 +27,9 @@
 {
     [super viewDidLoad];
     [self.scrollView addSubview:self.imageView];
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+
 }
 
 #pragma mark - Properties
@@ -159,40 +161,4 @@
     }
 }
 
-#pragma mark - UISplitViewControllerDelegate
-
-// this section added during Shutterbug demo
-
-- (void)awakeFromNib
-{
-    self.splitViewController.delegate = self;
-}
-
-- (BOOL)splitViewController:(UISplitViewController *)svc
-   shouldHideViewController:(UIViewController *)vc
-              inOrientation:(UIInterfaceOrientation)orientation
-{
-    return UIInterfaceOrientationIsPortrait(orientation);
-}
-
-- (void)splitViewController:(UISplitViewController *)svc
-     willHideViewController:(UIViewController *)aViewController
-          withBarButtonItem:(UIBarButtonItem *)barButtonItem
-       forPopoverController:(UIPopoverController *)pc
-{
-    barButtonItem.title = aViewController.title;
-    self.navigationItem.leftBarButtonItem = barButtonItem;
-}
-
-- (void)splitViewController:(UISplitViewController *)svc
-     willShowViewController:(UIViewController *)aViewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    self.navigationItem.leftBarButtonItem = nil;
-}
-/*
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
-    return UIModalPresentationNone;
-}
-*/
 @end

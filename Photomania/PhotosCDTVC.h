@@ -11,7 +11,7 @@
 @interface PhotosCDTVC : CoreDataTableViewController
 
 // generic, показывающий Photo  CDTVC
-// подцепляется fetchedResultsController к любому Photo fзапросу
+// подцепляется fetchedResultsController к любому Photo запросу
 // используйте @"Photo Cell" как cell's reuse id для вашей table view
 // "переезжает" на ImageViewController для показа изображения 
 

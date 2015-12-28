@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4AC7A4D1C25545D0073EC73 /* PhotosByPhotographerMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC7A4C1C25545D0073EC73 /* PhotosByPhotographerMapViewController.m */; };
+		E4AC7A4F1C25F3490073EC73 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AC7A4E1C25F3490073EC73 /* MapKit.framework */; };
+		E4AC7A551C26B93D0073EC73 /* Photo+Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AC7A541C26B93D0073EC73 /* Photo+Annotation.m */; };
+		E4EDCCCD1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4EDCCCC1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.m */; };
 		EC875138182B183B00619DE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC875137182B183B00619DE9 /* Foundation.framework */; };
 		EC87513A182B183B00619DE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC875139182B183B00619DE9 /* CoreGraphics.framework */; };
 		EC87513C182B183B00619DE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC87513B182B183B00619DE9 /* UIKit.framework */; };
@@ -47,6 +51,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E4AC7A4B1C25545D0073EC73 /* PhotosByPhotographerMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosByPhotographerMapViewController.h; sourceTree = "<group>"; };
+		E4AC7A4C1C25545D0073EC73 /* PhotosByPhotographerMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosByPhotographerMapViewController.m; sourceTree = "<group>"; };
+		E4AC7A4E1C25F3490073EC73 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E4AC7A531C26B93D0073EC73 /* Photo+Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Photo+Annotation.h"; sourceTree = "<group>"; };
+		E4AC7A541C26B93D0073EC73 /* Photo+Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Photo+Annotation.m"; sourceTree = "<group>"; };
+		E4EDCCCB1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosByPhotographerImageViewController.h; sourceTree = "<group>"; };
+		E4EDCCCC1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosByPhotographerImageViewController.m; sourceTree = "<group>"; };
 		EC875134182B183B00619DE9 /* Photomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC875137182B183B00619DE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EC875139182B183B00619DE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4AC7A4F1C25F3490073EC73 /* MapKit.framework in Frameworks */,
 				EC87513A182B183B00619DE9 /* CoreGraphics.framework in Frameworks */,
 				EC87513C182B183B00619DE9 /* UIKit.framework in Frameworks */,
 				EC875138182B183B00619DE9 /* Foundation.framework in Frameworks */,
@@ -140,6 +152,7 @@
 		EC875136182B183B00619DE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E4AC7A4E1C25F3490073EC73 /* MapKit.framework */,
 				EC875137182B183B00619DE9 /* Foundation.framework */,
 				EC875139182B183B00619DE9 /* CoreGraphics.framework */,
 				EC87513B182B183B00619DE9 /* UIKit.framework */,
@@ -211,6 +224,8 @@
 				EC87516F182B186C00619DE9 /* Photomania.xcdatamodeld */,
 				EC875186182B1BD700619DE9 /* Photographer+Create.h */,
 				EC875187182B1BD700619DE9 /* Photographer+Create.m */,
+				E4AC7A531C26B93D0073EC73 /* Photo+Annotation.h */,
+				E4AC7A541C26B93D0073EC73 /* Photo+Annotation.m */,
 				EC87517E182B19EB00619DE9 /* Photo+Flickr.h */,
 				EC87517F182B19EB00619DE9 /* Photo+Flickr.m */,
 				EC87517B182B199F00619DE9 /* Photo.h */,
@@ -224,6 +239,10 @@
 		ECFA69B0182B5C2E00A3A8A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E4EDCCCB1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.h */,
+				E4EDCCCC1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.m */,
+				E4AC7A4B1C25545D0073EC73 /* PhotosByPhotographerMapViewController.h */,
+				E4AC7A4C1C25545D0073EC73 /* PhotosByPhotographerMapViewController.m */,
 				ECBDC2BF1831B01600947D28 /* PhotosByPhotographerCDTVC.h */,
 				ECBDC2C01831B01600947D28 /* PhotosByPhotographerCDTVC.m */,
 				ECBDC2C21831B29C00947D28 /* PhotosCDTVC.h */,
@@ -361,15 +380,18 @@
 				EC87518F182B1CAF00619DE9 /* PhotographersCDTVC.m in Sources */,
 				EC875180182B19EB00619DE9 /* Photo+Flickr.m in Sources */,
 				EC875148182B183B00619DE9 /* PhotomaniaAppDelegate.m in Sources */,
+				E4AC7A4D1C25545D0073EC73 /* PhotosByPhotographerMapViewController.m in Sources */,
 				EC875188182B1BD700619DE9 /* Photographer+Create.m in Sources */,
 				ECBDC2BE1831AF5100947D28 /* ImageViewController.m in Sources */,
 				EC87518C182B1C6700619DE9 /* CoreDataTableViewController.m in Sources */,
 				EC875144182B183B00619DE9 /* main.m in Sources */,
 				ECBDC2C11831B01600947D28 /* PhotosByPhotographerCDTVC.m in Sources */,
+				E4AC7A551C26B93D0073EC73 /* Photo+Annotation.m in Sources */,
 				ECFA69B4182B5D7700A3A8A0 /* FlickrFetcher.m in Sources */,
 				EC87517A182B199E00619DE9 /* Photographer.m in Sources */,
 				EC875171182B186C00619DE9 /* Photomania.xcdatamodeld in Sources */,
 				ECBDC2C41831B29C00947D28 /* PhotosCDTVC.m in Sources */,
+				E4EDCCCD1C2E7C1B00E476B9 /* PhotosByPhotographerImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

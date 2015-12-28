@@ -10,6 +10,8 @@
 #import "Photographer.h"
 #import "PhotoDatabaseAvailability.h"
 #import "PhotosByPhotographerCDTVC.h"
+#import "PhotosByPhotographerMapViewController.h"
+#import "PhotosByPhotographerImageViewController.h"
 
 @implementation PhotographersCDTVC
 
@@ -65,12 +67,23 @@
                                               objectAtIndexPath:indexPath];
     
     // заметьте, что мы не проверяем здесь идентификатор segue
-    // возможно это правильноro ... трудно представить другой способ,
+    // возможно это правильно, но ... трудно представить другой способ,
     // каким бы этот класс мог бы "переехать" на  PhotosByPhotographerCDTVC
     if ([vc isKindOfClass:[PhotosByPhotographerCDTVC class]]) {
         PhotosByPhotographerCDTVC *pbpcdtvc = (PhotosByPhotographerCDTVC *)vc;
         pbpcdtvc.photographer = photographer;
+        
+        // мы можем также "переехать" на PhotosByPhotographerMapViewController
+    } else if ([vc isKindOfClass:[PhotosByPhotographerMapViewController class]]) {
+        PhotosByPhotographerMapViewController *pbpmapvc =(PhotosByPhotographerMapViewController *)vc;
+        pbpmapvc.photographer = photographer;
+        
+        // или на PhotosByPhotographerImageViewController
+    } else if ([vc isKindOfClass:[PhotosByPhotographerImageViewController class]]) {
+        PhotosByPhotographerImageViewController *pbpivc = (PhotosByPhotographerImageViewController *)vc;
+        pbpivc.photographer = photographer;
     }
+
 }
 
 //шаблонный

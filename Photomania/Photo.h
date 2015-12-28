@@ -11,12 +11,20 @@
 
 @class Photographer;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface Photo : NSManagedObject
 
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * subtitle;
-@property (nonatomic, retain) NSString * imageURL;
-@property (nonatomic, retain) NSString * unique;
-@property (nonatomic, retain) Photographer *whoTook;
+@property (nullable, nonatomic, retain) NSString *imageURL;
+@property (nullable, nonatomic, retain) NSString *subtitle;
+@property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSString *unique;
+@property (nullable, nonatomic, retain) NSNumber *latitude;
+@property (nullable, nonatomic, retain) NSNumber *longitude;
+@property (nullable, nonatomic, retain) NSString *thumbnailURL;
+@property (nullable, nonatomic, retain) Photographer *whoTook;
+
+
+NS_ASSUME_NONNULL_END
 
 @end

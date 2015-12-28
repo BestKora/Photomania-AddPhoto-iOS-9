@@ -35,10 +35,9 @@
                 fromIndexPath:(NSIndexPath *)indexPath
 {
     Photo *photo = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+  
     // заметьте, что мы не проверяем здесь идентификатор segue
-    // легко себе представить два различных segue от этого класса к ImageViewController
-    // например, они могут применяться для различной сортировки оттенков краски или еще чего-нибудь
+    // легко себе представить два различных segue от этого класса к ImageViewController,
     // но в данный момент у нас единственный segue, так что нам не надо проверять его идентификатор
     
     if ([vc isKindOfClass:[ImageViewController class]]) {
@@ -47,10 +46,10 @@
         ivc.imageURL = [NSURL URLWithString:photo.imageURL];
         
         ivc.title = photo.title;
-    }
+    
+          }
 }
 
-// boilerplate
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSIndexPath *indexPath = nil;
@@ -62,7 +61,6 @@
                   fromIndexPath:indexPath];
 }
 
-// boilerplate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     id detailvc = [self.splitViewController.viewControllers lastObject];

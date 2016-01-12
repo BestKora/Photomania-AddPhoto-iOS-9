@@ -231,15 +231,106 @@
                             <constraint firstItem="W0E-ox-alX" firstAttribute="bottom" secondItem="zHn-iY-kFN" secondAttribute="top" id="nfu-Ty-8ee"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vgk-3J-eRX"/>
+                    <navigationItem key="navigationItem" id="vgk-3J-eRX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="rB1-cL-IBw">
+                            <connections>
+                                <segue destination="BOX-Va-qUo" kind="modal" identifier="Add Photo" id="LXh-sf-iY1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addPhotoBarButtonItem" destination="rB1-cL-IBw" id="Wld-yk-XGS"/>
                         <outlet property="mapView" destination="W0E-ox-alX" id="BA6-7i-7Sj"/>
                         <segue destination="uTD-Wc-bEc" kind="push" identifier="Show Photo" id="hnK-NM-Vh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvK-KE-uDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="1124"/>
+            <point key="canvasLocation" x="2568" y="1121"/>
+        </scene>
+        <!--Add Photo View Controller-->
+        <scene sceneID="yoT-lu-sJk">
+            <objects>
+                <viewController id="BOX-Va-qUo" customClass="AddPhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J4e-2a-742"/>
+                        <viewControllerLayoutGuide type="bottom" id="mxx-mV-2Bm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wab-XB-LrU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kET-Ui-wNu">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="BOX-Va-qUo" eventType="touchUpInside" id="bES-q6-Xc6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV0-Oh-eG7">
+                                <rect key="frame" x="263" y="20" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dT8-62-F7G" kind="unwind" identifier="Do Add Photo" unwindAction="addedPhoto:" id="ROI-Xp-2a2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZi-up-m1t">
+                                <rect key="frame" x="20" y="142" width="77" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto" destination="BOX-Va-qUo" eventType="touchUpInside" id="7qw-Ia-rEJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Vw-uu-n2t">
+                                <rect key="frame" x="20" y="180" width="280" height="280"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j9U-mu-TRe">
+                                <rect key="frame" x="87" y="58" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BOX-Va-qUo" id="ceb-59-hsM"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-QU-UT2">
+                                <rect key="frame" x="87" y="96" width="213" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BOX-Va-qUo" id="b1A-31-PvD"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxS-lh-1yx">
+                                <rect key="frame" x="20" y="100" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sS-vo-CVB">
+                                <rect key="frame" x="20" y="62" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="7Vw-uu-n2t" id="wXj-Gt-3nx"/>
+                        <outlet property="subtitleTextField" destination="wMu-QU-UT2" id="NGX-4U-cUN"/>
+                        <outlet property="titleTextField" destination="j9U-mu-TRe" id="OSc-1S-Euq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XjR-Wd-eZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dT8-62-F7G" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3004" y="1107"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
